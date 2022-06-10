@@ -5,11 +5,17 @@
 .idea
 *.iml
 *.user
+*.md
+*.dll
+*.json
+*.pdb
 out
 gen
-*.md
+
 
 # build folders
 obj
-bin
+/bin/Debug/net6.0/BankAccounts
+
+
 
