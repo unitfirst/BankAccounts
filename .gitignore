@@ -10,3 +10,5 @@ gen
 # build folders
 obj
 bin
+
+readme.md
