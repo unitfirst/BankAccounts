@@ -6,6 +6,8 @@ namespace BankAccounts;
 public class Bank : IEditPhoneNumber, IEditFullName
 {
     private string? Path { get; }
+    private Account account = new();
+    private Employee employee;
     private readonly List<Account> _accounts = new();
     private readonly bool _flag;
 
@@ -15,7 +17,7 @@ public class Bank : IEditPhoneNumber, IEditFullName
         Console.WriteLine("Please select role:" +
                           "\n1.Consultant" +
                           "\n2.Manager");
-        Employee employee = Console.ReadLine() == "1" ? new Consultant() : new Manager();
+        employee = Console.ReadLine() == "1" ? new Consultant() : new Manager();
         _flag = employee.GetType() != typeof(Consultant);
     }
 
@@ -60,10 +62,14 @@ public class Bank : IEditPhoneNumber, IEditFullName
                 $"{item.PhoneNumber,-20}" +
                 $"{(_flag == false ? "**** ******" : item.Passport),-10}");
     }
-    
-    public void EditName(Account account)
+
+    public void EditName()
     {
-        if (_flag)
+        if (employee is Consultant)
+        {
+            PrintAccessDenied();
+        }
+        else
         {
             Console.WriteLine("Type new name:");
             var name = Console.ReadLine();
@@ -77,10 +83,6 @@ public class Bank : IEditPhoneNumber, IEditFullName
             {
                 Console.WriteLine("Name cant be empty.");
             }
-        }
-        else
-        {
-            PrintAccessDenied();
         }
     }
     
@@ -103,5 +105,10 @@ public class Bank : IEditPhoneNumber, IEditFullName
     private void PrintAccessDenied()
     {
         Console.WriteLine("Sorry, you dont have permission to edit name.");
+    }
+
+    public void EditName(Account account)
+    {
+        throw new NotImplementedException();
     }
 }
