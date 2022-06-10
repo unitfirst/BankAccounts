@@ -1,6 +1,6 @@
 # BankAccounts
 
-**Exercise 1**
+**Task 1**
 
 Bank "A" needs to develop a consultant program to view customer data. The consultant does not have rights to change or view some of the data. Create a class that will contain the following fields:
 
