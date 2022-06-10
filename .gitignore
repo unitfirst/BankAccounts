@@ -4,11 +4,12 @@
 # IntelliJ project files
 .idea
 *.iml
+*.user
 out
 gen
+*.md
 
 # build folders
 obj
 bin
 
-readme.md
