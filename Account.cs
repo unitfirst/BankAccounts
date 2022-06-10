@@ -2,7 +2,7 @@ using System.Collections;
 
 namespace BankAccounts;
 
-public class Account : IEnumerable
+public class Account
 {
     public Account(string? name, string secondName, string thirdName, string? phoneNumber, string passport)
     {
@@ -22,9 +22,4 @@ public class Account : IEnumerable
     public string? ThirdName { get; set; }
     public string? PhoneNumber { get; set; }
     public string? Passport { get; set; }
-
-    public IEnumerator GetEnumerator()
-    {
-        throw new NotImplementedException();
-    }
 }

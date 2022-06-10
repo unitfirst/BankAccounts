@@ -46,7 +46,7 @@ public class Bank : IEditPhoneNumber, IEditFullName
 
         return _accounts;
     }
-
+    
     public void AccountInfo()
     {
         Console.WriteLine(
@@ -60,7 +60,7 @@ public class Bank : IEditPhoneNumber, IEditFullName
                 $"{item.PhoneNumber,-20}" +
                 $"{(_flag == false ? "**** ******" : item.Passport),-10}");
     }
-
+    
     public void EditName(Account account)
     {
         if (_flag)
@@ -83,7 +83,7 @@ public class Bank : IEditPhoneNumber, IEditFullName
             PrintAccessDenied();
         }
     }
-
+    
     public void EditPhoneNumber(Account account)
     {
         Console.WriteLine("Type new number:");
@@ -99,7 +99,7 @@ public class Bank : IEditPhoneNumber, IEditFullName
             Console.WriteLine("Phone number cant be empty.");
         }
     }
-
+    
     private void PrintAccessDenied()
     {
         Console.WriteLine("Sorry, you dont have permission to edit name.");
