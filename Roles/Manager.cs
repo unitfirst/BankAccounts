@@ -1,5 +1,5 @@
 namespace BankAccounts.Roles;
 
-internal class Manager : Consultant
+internal class Manager : Employee
 {
 }

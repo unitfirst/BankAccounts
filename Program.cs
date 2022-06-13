@@ -4,9 +4,9 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        Bank bank = new("clients.txt");
+        Bank bank = new();
 
-        bank.GetAccountList();
+        bank.GetList();
         bank.AccountInfo();
 
         Console.ReadKey();
