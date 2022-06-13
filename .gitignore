@@ -15,7 +15,7 @@ gen
 
 # build folders
 obj
-/bin/Debug/net6.0/BankAccounts
+bin
 
 
 
