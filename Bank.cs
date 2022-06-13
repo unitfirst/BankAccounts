@@ -72,10 +72,11 @@ public class Bank : IEditPhoneNumber, IEditFullName
     public void AccountInfo()
     {
         Console.WriteLine(
-            $"{"Account name",-20}{"Second Name",-20}{"Third name",-20}{"Phone number",-20}{"Passport",-10}");
+            $"{"ID",-6}{"Account name",-20}{"Second Name",-20}{"Third name",-20}{"Phone number",-20}{"Passport",-10}");
 
         foreach (var item in _accountList)
             Console.WriteLine(
+                $"{item.Id,-6}" +
                 $"{item.FirstName,-20}" +
                 $"{item.SecondName,-20}" +
                 $"{item.ThirdName,-20}" +
