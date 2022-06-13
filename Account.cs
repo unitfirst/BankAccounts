@@ -4,6 +4,7 @@ namespace BankAccounts;
 
 public class Account
 {
+    public string? Id { get; set; }
     public string? FirstName { get; set; }
     public string? SecondName { get; set; }
     public string? ThirdName { get; set; }
