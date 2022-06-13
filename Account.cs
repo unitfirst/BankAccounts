@@ -4,19 +4,6 @@ namespace BankAccounts;
 
 public class Account
 {
-    public Account(string? name, string secondName, string thirdName, string? phoneNumber, string passport)
-    {
-        FirstName = name;
-        SecondName = secondName;
-        ThirdName = thirdName;
-        PhoneNumber = phoneNumber;
-        Passport = passport;
-    }
-
-    public Account() : this("", "", "", "", "")
-    {
-    }
-
     public string? FirstName { get; set; }
     public string? SecondName { get; set; }
     public string? ThirdName { get; set; }
