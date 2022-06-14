@@ -1,4 +1,6 @@
-﻿namespace BankAccounts;
+﻿using BankAccounts.System;
+
+namespace BankAccounts;
 
 internal class Program
 {
@@ -7,7 +9,8 @@ internal class Program
         Bank bank = new();
 
         bank.GetList();
-        bank.AccountInfo();
+        bank.ShowAllRecords();
+        bank.ShowRecord();
 
         Console.ReadKey();
         Console.Clear();
