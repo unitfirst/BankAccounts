@@ -6,9 +6,9 @@ namespace BankAccounts.System;
 
 public class Bank : IEditPhoneNumber, IEditFullName
 {
+    private readonly Account _account = new();
     private readonly Employee _employee;
     private readonly Repository _repo = new(@"clients.txt");
-    private readonly Account _account = new();
     private List<Account> _accountList;
 
     private Bank(List<Account> accountList)
@@ -75,7 +75,7 @@ public class Bank : IEditPhoneNumber, IEditFullName
         Console.WriteLine("\nType name for search...");
 
         var nameRequest = Console.ReadLine();
-        var access = true == _employee is not Consultant;
+        var access = _employee is not Consultant;
 
         Console.WriteLine($"\nFind: Account where name contains \"{nameRequest}\":");
         Console.WriteLine(_accountList.Find(
