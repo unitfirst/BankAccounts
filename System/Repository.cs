@@ -1,4 +1,4 @@
-namespace BankAccounts;
+namespace BankAccounts.System;
 
 public class Repository
 {
@@ -9,7 +9,7 @@ public class Repository
         Path = path;
     }
 
-    private string? Path { get; }
+    private string? Path { get; set; }
 
     public List<Account> GetList()
     {
@@ -23,11 +23,12 @@ public class Repository
                 var field = line.Split(", ");
                 var account = new Account
                 {
-                    FirstName = field[0],
-                    SecondName = field[1],
-                    ThirdName = field[2],
-                    PhoneNumber = field[3],
-                    Passport = field[4]
+                    Id = int.Parse(field[0]),
+                    FirstName = field[1],
+                    SecondName = field[2],
+                    ThirdName = field[3],
+                    PhoneNumber = field[4],
+                    Passport = field[5]
                 };
 
                 _list.Add(account);
