@@ -10,7 +10,7 @@ internal class Program
 
         bank.GetList();
         bank.ShowAllRecords();
-        bank.ShowRecord();
+        bank.FindRecordByName();
 
         Console.ReadKey();
         Console.Clear();
