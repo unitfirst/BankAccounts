@@ -14,20 +14,21 @@ public class Account
 
     public string ToString(bool access)
     {
-        return $"ID: {Id,12}\n" +
-               $"Name: {FirstName,14}\n" +
-               $"Second name: {SecondName,7}\n" +
-               $"Third name: {ThirdName,9}\n" +
-               $"Mobile: {PhoneNumber,20}\n" +
-               $"Passport: {(access ? Passport : "**** ******"),16}";
+        return $"{Id,-6}" +
+               $"{FirstName,-20}" +
+               $"{SecondName,-20}" +
+               $"{ThirdName,-20}" +
+               $"{PhoneNumber,-20}" +
+               $"{(access ? Passport : "**** ******"),-10}";
     }
 
     public override bool Equals(object? obj)
     {
-        if (obj == null) return false;
-        var objAsPart = obj as Account;
-        if (objAsPart == null) return false;
-        else return Equals(objAsPart);
+        return
+            obj is Account account
+            && FirstName == account.FirstName
+            && SecondName == account.SecondName
+            && ThirdName == account.ThirdName;
     }
 
     public override int GetHashCode()
