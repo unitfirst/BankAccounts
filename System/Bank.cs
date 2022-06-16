@@ -88,13 +88,7 @@ public class Bank : IEditPhoneNumber, IEditFullName
     {
         PrintHeader();
         foreach (var item in _accountList)
-            Console.WriteLine(
-                $"{item.Id,-6}" +
-                $"{item.FirstName,-20}" +
-                $"{item.SecondName,-20}" +
-                $"{item.ThirdName,-20}" +
-                $"{item.PhoneNumber,-20}" +
-                $"{(_employee is Consultant ? "**** ******" : item.Passport),-10}");
+            Console.WriteLine(item.ToString(_access));
     }
 
     private void PrintAccessDenied()
